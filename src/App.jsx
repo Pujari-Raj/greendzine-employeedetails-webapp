@@ -1,14 +1,12 @@
 import './App.css';
+import Dashboard from './components/Dashboard';
+import Login from './components/Login';
 
 function App() {
   return (
     <>
-      <p className="text-xl">
-        Click on the Vite and React logos to learn more
-      </p>
-      <p className=''>
-      Employee Productivity Dashboard
-      </p>
+      {/* <Login/> */}
+      <Dashboard/>
     </>
   )
 }
