@@ -2,15 +2,16 @@ import React, { useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [passwordmessage, setPasswordMessage] = useState(false);
   const email = useRef(null);
   const password = useRef(null);
   const navigate =  useNavigate();
 
   const handleLoginForm = (e) => {
     e.preventDefault();
-    console.log(
-      "email=> " + email.current.value + "   password" + password.current.value
-    );
+    // console.log(
+    //   "email=> " + email.current.value + "   password" + password.current.value
+    // );
     const enteredEmail = email.current.value;
     const enteredPassword = password.current.value;
 
@@ -19,7 +20,8 @@ const Login = () => {
       navigate("/Dashboard");
     }
     else{
-      console.log("check email/password");
+      setPasswordMessage(true);
+      // console.log("check email/password");
     }
   };
 
@@ -40,7 +42,6 @@ const Login = () => {
             <form
               action=""
               className="flex flex-col"
-              // onSubmit={(e) => e.preventDefault()}
               onSubmit={handleLoginForm}
               autoComplete="false"
             >
@@ -63,6 +64,7 @@ const Login = () => {
                 required
                 autoComplete="false"
               />
+              {passwordmessage && <p className="" >Incorect Email/Password</p> }
               <button
                 type="submit"
                 className="login_btn p-3 m-3 border-[2px] rounded-l-3xl rounded-r-3xl"
