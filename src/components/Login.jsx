@@ -32,7 +32,7 @@ const Login = () => {
           <div className="logo-title-container">
             <img
               className="ml-8"
-              src="/public/assets/application-logo.png"
+              src="/assets/application-logo.png"
               alt="webapp-logo"
               srcset=""
             />
